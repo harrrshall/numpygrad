@@ -78,12 +78,16 @@ a:hover {
 }
 
 /* --- layout grid ---------------------------------------------------------
-   Sidebar and content form one unit, centred in the viewport with equal
-   margins on both sides. Hiding the sidebar centres the content column on
-   its own. This keeps the design balanced at every width. */
+   The reading column is centred in the viewport. A ghost track on the right,
+   equal in width to the sidebar, mirrors the sidebar on the left so the
+   content sits dead-centre with equal space on both sides, instead of the
+   sidebar pushing it off to the right. The content track is minmax(0, measure)
+   so it narrows gracefully before the responsive breakpoint takes over.
+   Hiding the sidebar leaves the content centred in place, with no jump. */
 .layout {
   display: grid;
-  grid-template-columns: var(--sidebar-w) minmax(0, var(--measure));
+  grid-template-columns:
+    var(--sidebar-w) minmax(0, var(--measure)) var(--sidebar-w);
   column-gap: var(--gap);
   justify-content: center;
   padding: 0 1.6rem;
@@ -105,7 +109,11 @@ body.sidebar-hidden .sidebar {
   display: none;
 }
 
-/* --- sidebar / table of contents ---------------------------------------- */
+/* --- sidebar / table of contents ----------------------------------------
+   Equal horizontal padding on both sides. scrollbar-gutter: stable both-edges
+   reserves a matching gutter on the left too, so the scrollbar on the right
+   no longer makes the column look lopsided, and the text never sits flush
+   against the edge. scrollbar-width: thin keeps that reserved space small. */
 .sidebar {
   grid-column: 1;
   position: sticky;
@@ -113,7 +121,9 @@ body.sidebar-hidden .sidebar {
   align-self: start;
   max-height: 100vh;
   overflow-y: auto;
-  padding: 2.2rem 0 2rem;
+  scrollbar-width: thin;
+  scrollbar-gutter: stable both-edges;
+  padding: 2.2rem 0.8rem 2rem;
 }
 .sidebar-summary {
   display: none;

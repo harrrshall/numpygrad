@@ -67,11 +67,13 @@
       localStorage.setItem("sidebarHidden", hidden ? "1" : "0");
     } catch (e) {}
   }
+  // the contents panel is hidden by default on both desktop and mobile;
+  // it only shows if the visitor previously chose to reveal it.
   var storedHidden = null;
   try {
     storedHidden = localStorage.getItem("sidebarHidden");
   } catch (e) {}
-  if (storedHidden === "1") applyHidden(true, false);
+  applyHidden(storedHidden !== "0", false);
   if (toggleBtn) {
     toggleBtn.addEventListener("click", function () {
       var hidden = !document.body.classList.contains("sidebar-hidden");

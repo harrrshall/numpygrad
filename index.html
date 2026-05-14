@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="katex.min.css">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="sidebar-hidden">
 <a class="skip-link" href="#main">Skip to content</a>
 <div class="layout">
   <details class="sidebar" id="sidebar" open>
@@ -148,7 +148,7 @@
       <div class="toolbar">
         <button type="button" class="tool-btn" id="copy-md-btn">Copy as Markdown</button>
         <button type="button" class="tool-btn" id="print-btn">Print as book</button>
-        <button type="button" class="tool-btn" id="toggle-sidebar-btn">Hide contents</button>
+        <button type="button" class="tool-btn" id="toggle-sidebar-btn" aria-pressed="true">Show contents</button>
       </div>
     </header>
     <p class="abstract">A language model is a stack of array operations and a procedure for nudging numbers until the model predicts text well. Nothing in it is beyond a reader who can do arithmetic and is willing to follow a derivation. This course takes you from the definition of a limit to a GPT-2 that trains, in pure NumPy, checked against PyTorch at every step.</p>
