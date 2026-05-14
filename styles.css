@@ -35,6 +35,9 @@
 html {
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+  /* Reserve the scrollbar gutter on both edges so the page scrollbar does not
+     pull the centred content a few pixels left of the true window centre. */
+  scrollbar-gutter: stable both-edges;
 }
 
 body {
