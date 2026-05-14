@@ -35,9 +35,11 @@
 html {
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
-  /* Reserve the scrollbar gutter on both edges so the page scrollbar does not
-     pull the centred content a few pixels left of the true window centre. */
-  scrollbar-gutter: stable both-edges;
+  /* Reserve the scrollbar gutter on the right only. The content then centres
+     within the visible area (the window minus the scrollbar), so the
+     whitespace looks equal on both sides to the eye, which reads the
+     scrollbar itself as the page edge. */
+  scrollbar-gutter: stable;
 }
 
 body {
