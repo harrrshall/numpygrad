@@ -379,6 +379,15 @@ pre:hover .copy-btn,
   color: var(--ink);
   border-color: var(--ink);
 }
+/* touch devices never hover, so keep the copy button visible there */
+@media (hover: none) {
+  .copy-btn {
+    opacity: 0.75;
+  }
+  .header-anchor {
+    opacity: 0.4;
+  }
+}
 
 /* highlight.js tokens: a quiet, desaturated palette (six colors max) */
 .hljs-comment,
@@ -492,10 +501,14 @@ figcaption {
 }
 
 /* --- tables (booktabs style) -------------------------------------------- */
+.table-wrap {
+  margin: 1.2rem 0;
+  overflow-x: auto; /* scroll instead of overflowing on narrow screens */
+}
 .content table {
   border-collapse: collapse;
   width: 100%;
-  margin: 1.2rem 0;
+  margin: 0;
   font-size: 0.9rem;
   border-top: 1.5px solid var(--ink);
   border-bottom: 1.5px solid var(--ink);
