@@ -1,0 +1,9 @@
+/.venv/
+/.claude/
+/dev_history/
+/blog_parts/
+/assets/
+__pycache__/
+*.pyc
+*.md
+!/README.md
