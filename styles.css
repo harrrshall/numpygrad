@@ -196,6 +196,11 @@ body.sidebar-hidden .sidebar {
   color: var(--muted);
   margin: 0;
 }
+.author {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0.3rem 0 0;
+}
 .toolbar {
   display: flex;
   flex-wrap: wrap;
