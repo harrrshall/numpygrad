@@ -33,7 +33,7 @@ number** under the same evaluation protocol. The gap to the paper's 37.50 is
 ## Repository layout
 
 ```
-autograd/
+numpygrad/
 ├── README.md                 ← you are here
 ├── derivation.md             Step 0: every gradient derived from first principles (24 ops, 8 tiers)
 │
@@ -77,11 +77,13 @@ setup, so always run them from the repo root.
 
 ## Setup
 
-The project uses a virtual environment at `.venv/`. If it does not exist yet,
-create it and install the dependencies:
+Clone the repository, then create a virtual environment and install the
+dependencies:
 
 ```bash
-cd /home/cybernovas/Desktop/autograd
+git clone https://github.com/harrrshall/numpygrad.git
+cd numpygrad
+
 python3 -m venv .venv
 .venv/bin/pip install numpy scipy                 # the implementation itself
 .venv/bin/pip install torch --index-url https://download.pytorch.org/whl/cpu  # test oracle
@@ -113,7 +115,7 @@ Versions this was built/verified against: `numpy 2.4`, `torch 2.12.0+cpu`,
 ## Quick start
 
 ```bash
-cd /home/cybernovas/Desktop/autograd
+cd numpygrad
 
 # 1. the autograd engine works (gradient-accumulation smoke test, ~6s)
 .venv/bin/python tensor.py
