@@ -1,5 +1,7 @@
 # GPT-2 from scratch in NumPy
 
+![](docs/treatment-depth-prompt.png)
+
 A complete, **verified-correct** GPT-2 implementation in pure NumPy — autograd
 engine, layers, model, optimizer and training loop — with no PyTorch, no JAX, no
 autograd library in the model itself. PyTorch is used **only as a test oracle**:
