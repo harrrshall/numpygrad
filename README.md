@@ -1,6 +1,6 @@
 # GPT-2 from scratch in NumPy
 
-![](docs/treatment-depth-prompt.png)
+![Introducing numpygrad](docs/numpygrad-launch.png)
 
 A complete, **verified-correct** GPT-2 implementation in pure NumPy — autograd
 engine, layers, model, optimizer and training loop — with no PyTorch, no JAX, no
